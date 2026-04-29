@@ -33,7 +33,7 @@ Skie is a Weather Forecast Android App that shows real-time weather conditions, 
 
 ---
 ## API
-- **WeatherAPI** — [weatherapi.com](https://weatherapi.com)  
+- **WeatherAPI** — [weatherapi.com](https://www.weatherapi.com/)  
   Used for current weather, hourly forecast, 5-day forecast, 
   and city search suggestions.
 ---
