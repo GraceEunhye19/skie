@@ -41,5 +41,5 @@ Skie is a Weather Forecast App that shows real-time weather conditions, hourly f
 ---
 
 ## Developer
-**Your Name**  
+Grace Igbadun  
 Android Developer
