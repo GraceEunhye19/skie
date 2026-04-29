@@ -21,7 +21,7 @@ fun GlassCard(
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(24.dp))
-            .background(Color.White.copy(alpha = 0.18f))
+            .background(Color.White.copy(alpha = 0.25f))
             .border(
                 width = 1.dp,
                 color = Color.White.copy(alpha = 0.3f),

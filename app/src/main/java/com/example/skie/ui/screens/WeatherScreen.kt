@@ -183,7 +183,7 @@ fun WeatherContent(
                     Text(
                         text = data.condition,
                         color = Color.White.copy(alpha = 0.9f),
-                        fontSize = 20.sp,
+                        fontSize = 24.sp,
                         fontWeight = FontWeight.Medium
                     )
                     Spacer(modifier = Modifier.height(4.dp))
@@ -191,13 +191,13 @@ fun WeatherContent(
                     Text(
                         text = "H:${data.highTempC.toInt()}°  L:${data.lowTempC.toInt()}°",
                         color = Color.White.copy(alpha = 0.75f),
-                        fontSize = 14.sp
+                        fontSize = 18.sp
                     )
                     //what it actually feels like
                     Text(
                         text = "Feels like ${data.feelsLikeC.toInt()}°",
                         color = Color.White.copy(alpha = 0.75f),
-                        fontSize = 14.sp
+                        fontSize = 18.sp
                     )
                     Spacer(modifier = Modifier.height(6.dp))
 
@@ -206,13 +206,13 @@ fun WeatherContent(
                         Text(
                             text = "💧 ${data.humidity}%",
                             color = Color.White.copy(alpha = 0.75f),
-                            fontSize = 13.sp
+                            fontSize = 18.sp
                         )
                         //wind
                         Text(
                             text = "💨 ${data.wind.toInt()} km/h",
                             color = Color.White.copy(alpha = 0.75f),
-                            fontSize = 13.sp
+                            fontSize = 18.sp
                         )
                     }
                 }
@@ -232,7 +232,7 @@ fun WeatherContent(
                 Text(
                     text = quote.quote,
                     color = Color.White,
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                     fontWeight = FontWeight.Light,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
@@ -259,20 +259,66 @@ fun WeatherContent(
 
 fun getWeatherGradient(conditionCode: Int, isDay: Int): Brush {
     val colors = when {
-        isDay == 0 -> listOf(Color(0xFF0D1B2A), Color(0xFF1B2A4A), Color(0xFF162447)) //any condition at night
-        conditionCode == 1000 -> listOf(Color(0xFFFFB347), Color(0xFFFFD700), Color(0xFF87CEEB)) //clear skies during the day
-        conditionCode in listOf(1003) -> listOf(Color(0xFF87CEEB), Color(0xFFB0C4DE), Color(0xFF778899)) //partly cloudy
-        conditionCode in listOf(1006, 1009) -> listOf(Color(0xFF78909C), Color(0xFF90A4AE), Color(0xFFB0BEC5))  //more cloudy/overcast
-        conditionCode in listOf(1030, 1135, 1147) -> listOf(Color(0xFF9E9E9E), Color(0xFFBDBDBD), Color(0xFFE0E0E0)) //mist/fog
-        conditionCode in listOf(1063, 1150, 1153, 1180, 1183,
-            1186, 1189, 1192, 1195, 1243, 1246) ->
-            listOf(Color(0xFF37474F), Color(0xFF546E7A), Color(0xFF607D8B)) //rain
-        conditionCode in listOf(1087, 1273, 1276, 1279, 1282) ->
-            listOf(Color(0xFF212121), Color(0xFF37474F), Color(0xFF263238)) //storm
-        conditionCode in listOf(1114, 1117, 1210, 1213, 1216,
-            1219, 1222, 1225, 1255, 1258) ->
-            listOf(Color(0xFFB0BEC5), Color(0xFFCFD8DC), Color(0xFFECEFF1))  //snow
-        else -> listOf(Color(0xFF87CEEB), Color(0xFF4FC3F7), Color(0xFF0288D1))  //default look of the app
+        // night
+        isDay == 0 -> listOf(
+            Color(0xFF0D1B2A),
+            Color(0xFF1B2A4A),
+            Color(0xFF162447)
+        )
+        // sunny
+        conditionCode == 1000 -> listOf(
+            Color(0xFFE8870A),
+            Color(0xFFD4A017),
+            Color(0xFF1A6EA8)
+        )
+        // partly cloudy
+        conditionCode == 1003 -> listOf(
+            Color(0xFF4A7FA5),
+            Color(0xFF6B8FA3),
+            Color(0xFF4A5E6A)
+        )
+        // cloudy
+        conditionCode in listOf(1006, 1009) -> listOf(
+            Color(0xFF4A5A63),
+            Color(0xFF546470),
+            Color(0xFF637078)
+        )
+        // foggy
+        conditionCode in listOf(1030, 1135, 1147) -> listOf(
+            Color(0xFF6B6B6B),
+            Color(0xFF7A7A7A),
+            Color(0xFF8A8A8A)
+        )
+        // rainy
+        conditionCode in listOf(
+            1063, 1150, 1153, 1180, 1183,
+            1186, 1189, 1192, 1195, 1243, 1246
+        ) -> listOf(
+            Color(0xFF37474F),
+            Color(0xFF546E7A),
+            Color(0xFF607D8B)
+        )
+        // stormy
+        conditionCode in listOf(1087, 1273, 1276, 1279, 1282) -> listOf(
+            Color(0xFF212121),
+            Color(0xFF37474F),
+            Color(0xFF263238)
+        )
+        // snowy
+        conditionCode in listOf(
+            1114, 1117, 1210, 1213, 1216,
+            1219, 1222, 1225, 1255, 1258
+        ) -> listOf(
+            Color(0xFF7A9AAA),
+            Color(0xFF8FAAB8),
+            Color(0xFFA8C0CC)
+        )
+        // default
+        else -> listOf(
+            Color(0xFF1A6EA8),
+            Color(0xFF1A7FAF),
+            Color(0xFF0D5E8A)
+        )
     }
     return Brush.verticalGradient(colors)
 }

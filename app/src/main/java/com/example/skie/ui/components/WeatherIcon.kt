@@ -96,22 +96,6 @@ fun LottieWeatherIcon(
         )
     }
 
-//    val progress by animateLottieCompositionAsState(
-//        composition = composition,
-//        // hero icon loops forever, hourly icons play once and hold
-//        iterations = if (isHero) LottieConstants.IterateForever else 1,
-//        isPlaying = true
-//    )
-
-//    LottieAnimation(
-//        composition = composition,
-//        progress = { progress },
-//        modifier = modifier.then(
-//            Modifier.then(
-//                androidx.compose.ui.Modifier.size(size)
-//            )
-//        )
-//    )
 }
 
 

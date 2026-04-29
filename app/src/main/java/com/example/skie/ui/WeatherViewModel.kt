@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
-//placed outside for scalability and skeleton loader
+//placed outside for scalability, widgets and skeleton loader
 sealed class WeatherUiState{
     object Loading: WeatherUiState() //loading screen
     data class Success(val data: WeatherData): WeatherUiState() //what we want

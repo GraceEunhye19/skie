@@ -115,14 +115,14 @@ fun DailyForecastCard(day: DailyData){
             Text(
                 text = dayName,
                 color = Color.White,
-                fontSize = 15.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Medium,
                 modifier = Modifier.width(100.dp)
             )
             Text(
                 text = date,
-                color = Color.White.copy(alpha = 0.6f),
-                fontSize = 11.sp
+                color = Color.White,
+                fontSize = 14.sp
             )
         }
 
@@ -130,8 +130,8 @@ fun DailyForecastCard(day: DailyData){
         if (day.chanceOfRain > 0) {
             Text(
                 text = "💧 ${day.chanceOfRain}%",
-                color = Color.White.copy(alpha = 0.75f),
-                fontSize = 12.sp
+                color = Color.White.copy(alpha = 0.8f),
+                fontSize = 14.sp
             )
         } else {
             //if no chance of rain be a gap
@@ -151,13 +151,14 @@ fun DailyForecastCard(day: DailyData){
             Text(
                 text = "${day.highTempC.toInt()}°",
                 color = Color.White,
-                fontSize = 15.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.SemiBold
             )
             Text(
                 text = "${day.lowTempC.toInt()}°",
-                color = Color.White.copy(alpha = 0.6f),
-                fontSize = 15.sp
+                color = Color.White.copy(alpha = 0.8f),
+                fontSize = 18.sp,
+                fontWeight = FontWeight.SemiBold
             )
         }
     }

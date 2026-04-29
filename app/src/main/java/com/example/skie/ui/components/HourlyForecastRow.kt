@@ -28,7 +28,7 @@ fun HourlyForecastRow(hourlyData: List<HourlyData>){
             .fillMaxWidth()
             .horizontalScroll(rememberScrollState())
             .padding(horizontal = 4.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+        horizontalArrangement = Arrangement.spacedBy(18.dp)
     ) {
         hourlyData
             .filter { hour ->
@@ -68,13 +68,13 @@ fun HourlyItem(hour: HourlyData){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(6.dp),
-        modifier = Modifier.padding(vertical = 8.dp)
+        modifier = Modifier.padding(vertical = 4.dp)
     ) {
         //displays time
         Text(
             text = timeFormatted,
-            color = Color.White.copy(alpha = 0.8f),
-            fontSize = 12.sp
+            color = Color.White.copy(alpha = 0.9f),
+            fontSize = 18.sp
         )
         //displays the weather icon based on the code
         WeatherIcon(
@@ -87,7 +87,7 @@ fun HourlyItem(hour: HourlyData){
         Text(
             text = "${hour.tempC.toInt()}°",
             color = Color.White,
-            fontSize = 14.sp,
+            fontSize = 18.sp,
             fontWeight = FontWeight.Medium
         )
     }
