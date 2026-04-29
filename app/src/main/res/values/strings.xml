@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Skie</string>
+    <string name="try_again">Try Again</string>
+    <string name="loading_weather">Loading weather...</string>
+    <string name="back">Back</string>
+    <string name="search_cities">Search Cities</string>
+    <string name="type_a_city_name">Type a city name...</string>
+    <string name="clear">Clear</string>
+    <string name="no_cities_found_for">No cities found for \"%1$s\"</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="search">Search</string>
+</resources>
